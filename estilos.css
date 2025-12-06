@@ -1,0 +1,286 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c4e107;
+  background: #fff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+}
+
+
+.site-header {
+  background: #ffffff;
+  padding: 18px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: #222;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.logo::before {
+    
+  content: "⬛";
+  color: #ea52c1;
+  font-size: 14px;
+}
+
+.logo span {
+  color: #000;
+  font-weight: 400;
+}
+
+.main-nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #333;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+.main-nav a:hover {
+  color: #93b1e9;
+}
+
+
+.hero {
+  position: relative;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  background: url("imagen/fondo.jpeg") center/cover no-repeat;
+  color: white;
+}
+
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.hero-inner {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hero-text {
+  max-width: 550px;
+}
+
+.hero-text h1 {
+  font-size: 65px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-text .lead {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: #e2e1a5;
+  padding: 12px 28px;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #b85a20;
+}
+
+
+.hero-figure {
+  width: 45%;
+  height: 100%;
+  background: transparent;
+}
+
+
+.estimate-section {
+  background: #0f2233;
+  padding: 60px 0;
+  color: #fff;
+}
+
+.estimate-section h2 {
+  font-size: 26px;
+  margin-bottom: 35px;
+}
+
+.estimate-form {
+  width: 100%;
+}
+
+.inputs-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+   display: flex;
+  flex-wrap: wrap;
+  gap: 0px;    /* antes 25px – ahora más compacto */
+}
+
+
+.field {
+  flex: 1;
+  min-width: 160px;
+}
+
+.field.wide {
+  flex: 2;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.field input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  background: transparent;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+}
+
+/* Checkboxes */
+.checkbox-row {
+  margin-top: 20px;
+  display: flex;
+  gap: 40px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.checkbox-inline input {
+  margin-right: 6px;
+}
+
+/* Botón enviar */
+.actions-row {
+  margin-top: 25px;
+}
+
+.btn-submit {
+  background: #d66b28;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-submit:hover {
+  background: #b85b20;
+  text-align: center;
+}
+
+
+@media (max-width: 900px) {
+  .hero {
+    height: 600px;
+    text-align: center;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-figure {
+    display: none;
+  }
+
+  .hero-text h1 {
+    font-size: 45px;
+  }
+}
+
+/* --- FORMULARIO: TODOS LOS CUADROS UNIDOS EN UNA SOLA FILA --- */
+.inputs-row {
+    display: flex;
+    flex-wrap: nowrap;     /* ❗ IMPORTANTE: evita que bajen a otra línea */
+    gap: 0;                /* sin separación */
+    width: 100%;
+}
+
+.inputs-row .field {
+    flex: 1;               /* cada cuadro ocupa el mismo tamaño */
+    margin: 0;
+}
+
+.inputs-row .field input {
+    width: 100%;           /* ahora ocupan TODO el ancho */
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 0;      /* rectos */
+    box-sizing: border-box;
+}
+
+/* Campo ancho (dirección) — también en la misma fila */
+.inputs-row .field.wide {
+    flex: 1;               /* mantiene tamaño igual a los demás */
+}
+
+/* --- CHECKBOXES --- */
+.checkbox-row {
+    margin-top: 20px;
+}
+
+/* --- BOTÓN ENVIAR A LA DERECHA --- */
+.actions-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.btn-submit {
+    padding: 12px 25px;
+    background-color: #f78e0e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.btn-submit:hover {
+    background-color: #f78e0e;
+}
+
